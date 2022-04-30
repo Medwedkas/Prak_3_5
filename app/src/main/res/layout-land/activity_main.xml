@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="30dp">
+
+        <Button
+            android:id="@+id/caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Поменять фрагменты"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints,UnknownId"
+            tools:layout_editor_absoluteX="0dp" />
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/RedFragment"
+            android:name="com.example.sundtest.RedFragment"
+            android:layout_width="358dp"
+            android:layout_height="378dp"
+            app:layout_constraintEnd_toStartOf="@+id/BlueFragment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/caption"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/BlueFragment"
+            android:name="com.example.sundtest.BlueFragment"
+            android:layout_width="358dp"
+            android:layout_height="378dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/RedFragment"
+            app:layout_constraintTop_toBottomOf="@+id/caption"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
